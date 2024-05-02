@@ -5,7 +5,7 @@ if(process.env.NODE_ENV!=="production"){
     require("dotenv").config()      // Using .config() method it will store all data to process.env object and we can access that easily
 }
 
-
+console.log("HIii")
 const express=require("express")
 const app=express()
 const methodOverride=require("method-override")
