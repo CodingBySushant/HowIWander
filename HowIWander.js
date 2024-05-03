@@ -18,6 +18,7 @@ const flash=require("connect-flash")
 const passport=require("passport")
 const Localpassport=require("passport-local")
 const helmet=require("helmet")
+const MongoStore = require('connect-mongo');
 
 // There are lot of security issues with all websites which a dev need to deal with 
 // Some of them we have discussed in short in our app 
@@ -75,9 +76,16 @@ app.use(mongoSanitize())
 
 app.use(helmet({contentSecurityPolicy: false}))
 
-
+const store = MongoStore.create({      // This is to make a Mongostore to save session in that store
+    mongoUrl: mongoAtlasUrl,
+    touchAfter: 24 * 60 * 60,
+    crypto: {
+        secret: 'thisshouldbeabettersecret!'
+    }
+});
 
 const sessionConfig={
+    store,
     secret:"topSecret",
     name:"session",
     resave:false,
