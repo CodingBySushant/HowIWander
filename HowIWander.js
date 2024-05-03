@@ -5,7 +5,7 @@ if(process.env.NODE_ENV!=="production"){
     require("dotenv").config()      // Using .config() method it will store all data to process.env object and we can access that easily
 }
 
-console.log("HIii")
+
 const express=require("express")
 const app=express()
 const methodOverride=require("method-override")
@@ -50,7 +50,9 @@ const appError=require('./Utils/appError')  // This is to throw error with custo
 // const Campground=require("./models/campgrounds")
 const User=require("./models/users")
 
-mongoose.connect("mongodb://127.0.0.1:27017/yelp-camp",{
+const mongoAtlasUrl=process.env.MONGOATLAS_URL;
+
+mongoose.connect(mongoAtlasUrl,{
 //     useNewUrlParser: true,
 //     useCreateIndex: true,
 //     useUnifiedTopology: true
