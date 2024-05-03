@@ -31,6 +31,6 @@ body {
 }
 
 .btn-secondary, .btn-secondary:hover{
-    color: #333;
+    color: #333 !important;
     text-shadow: none;
 }
