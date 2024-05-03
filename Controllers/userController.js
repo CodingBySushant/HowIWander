@@ -14,7 +14,7 @@ module.exports.registerNewUser=async(req,res,next)=>{
             if(err){
                 return next(err)
             }
-            req.flash("success","Welcome to Yelp-Camp")
+            req.flash("success","Welcome to HowIWander")
             res.redirect("/campground")
         })
     }catch(e){
