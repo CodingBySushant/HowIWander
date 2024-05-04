@@ -50,7 +50,7 @@
         <div class="col-md-6">
             <div id='map' class="mb-3" style='height: 300px;'></div> <!-- This div is given an ID of map to use that id and display map through javaScript-->
             <% if(currentUser){ %>
-            <div style="border:1px solid silver">
+            <div style="border:1px solid silver; border-radius:10px">
                 <div class="card-body">
                     <h2 class="card-subtitle">Leave A Review</h2>
                     <form action="/campground/<%=foundCampground._id%>/review" class="card-body validate" method="post" novalidate>
@@ -79,7 +79,7 @@
             </div>
             <% } %>
             <% for( let review of foundCampground.reviews){ %>
-                <div class="mb-1" style="border:1px solid silver">
+                <div class="mb-1" style="border:1px solid silver; border-radius:10px">
                     <div class="card-body">
                         <h6 class="card-title mb-2 fst-italic "><%= review.author.username  %></h6>
                         <p class="starability-result" data-rating="<%= review.rating %>">
