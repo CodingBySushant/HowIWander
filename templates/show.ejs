@@ -30,7 +30,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item text-body-secondary"><%=foundCampground.location%></li>
                     <li class="list-group-item">Suggested by <%=foundCampground.author.username%></li>
-                    <li class="list-group-item">$<%=foundCampground.price%>/night</li>
+                    <li class="list-group-item">₹<%=foundCampground.price%>/night</li>
                 </ul>
                 <% if(currentUser && foundCampground.author.equals(currentUser._id)){ %>
                 <div class="card-body">
